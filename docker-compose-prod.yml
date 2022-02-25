@@ -8,8 +8,6 @@ services:
     labels:
       caddy: calendrier-liturgique-catholique.reges.fr
       caddy.reverse_proxy: '{{upstreams 3000}}'
-    ports:
-      - 3000:3000
 
 networks:
   caddy:
