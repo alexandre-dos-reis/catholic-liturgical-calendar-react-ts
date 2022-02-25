@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  calendrier-liturgique-catholique:
+    container_name: calendrier-liturgique-catholique
+    build: .
+    networks:
+      - caddy
+    labels:
+      caddy: calendrier-liturgique-catholique.reges.fr
+      caddy.reverse_proxy: '{{upstreams 3000}}'
+    ports:
+      - 3000:3000
+
+networks:
+  caddy:
+    external: true
